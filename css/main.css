@@ -97,7 +97,8 @@ form.enter input {
     color: #020202;
     cursor: pointer;
 }
-button.submit {
+button.signIn_submit,
+button.signUp_submit {
     padding: 10px 60px;
     border: none;
     outline: none;

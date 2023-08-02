@@ -20,11 +20,11 @@
                         </div>
                         <span>or use your account</span>
                     </div>
-                    <form action="" class="enter row">
-                        <input class="email" type="email" placeholder="Email">
-                        <input class="password" type="password" placeholder="Password">
+                    <form  onsubmit="signinUser()" class="enter row">
+                        <input class="signin_email" type="email" placeholder="Email">
+                        <input class="signin_password" type="password" placeholder="Password">
                         <span class="pass_option">Forgot your password?</span>
-                        <button class="submit">sign in</button>
+                        <button class="signIn_submit">sign in</button>
                     </form>
                 </div>
                 <div class="form_area2 hidden">
@@ -37,11 +37,11 @@
                         </div>
                         <span>or use your email for registration</span>
                     </div>
-                    <form action="" class="enter row">
-                        <input class="name" type="text" placeholder="Name">
-                        <input type="email" placeholder="Email">
-                        <input type="password" placeholder="Password">
-                        <button class="submit">sign up</button>
+                    <form onsubmit="signUpUser()" class="enter row">
+                        <input class="signup_name" type="text" placeholder="Name">
+                        <input class="signup_email" type="email" placeholder="Email">
+                        <input class="signup_password" type="password" placeholder="Password">
+                        <button class="signUp_submit">sign up</button>
                     </form>
                 </div>
             </div>

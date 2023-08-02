@@ -8,7 +8,7 @@ let introBgColor = document.querySelector('.bgColor')
 let formArea = document.querySelector('.form_area')
 let formIn = document.querySelector('.form_area1')
 let formUp = document.querySelector('.form_area2')
-const formBtns = document.querySelectorAll('button.submit')
+let form1 = document.querySelector('form.enter')
 
 function translate(e) {
     e.addEventListener('click', ()=> {
@@ -23,22 +23,56 @@ function translate(e) {
 translate(signUp)
 translate(signUpBtn)
 
-formBtns.forEach(info => {
-    info.preventDefault()
-})
+let users = JSON.parse(localStorage.getItem('users'))?JSON.parse(localStorage.getItem('users')):[]
+// Sign Up user
+let signUpName = document.querySelector('.signup_name')
+let signUpEmail = document.querySelector('.signup_email')
+let signUpPassword = document.querySelector('.signup_password')
+let signUpSubmit = document.querySelector('.signUp_submit')
 
-let usersInfo = []
-
-function entInfo (e) {
-    e.preventDefault()
-    let userInf = {
-        name: document.querySelector('.name'),
-        email: document.querySelector('.email'),
-        password: document.querySelector('.password')
+ function signUpUser (e) {
+     let userObj = {
+        name: signUpName.value,
+        email: signUpEmail.value,
+        pass: signUpPassword.value
     }
-    usersInfo.push(userInf)
-    document.querySelector('form.enter').reset()
+
+   users.push(userObj)
+    
+    console.log(users);
+    localStorage.setItem('users', JSON.stringify(users))
+    
+    form1.reset()
+
 }
+signUpSubmit.addEventListener('click',(e)=> {
+    e.preventDefault()
+    signUpUser()
+    alert('done')
+  })
+
+//  log in
+let signInEmail = document.querySelector('.signin_email')
+let signInPassword = document.querySelector('.signin_password')
+let signInSubmit = document.querySelector('.signIn_submit')
+
+
+function signinUser(e) {
+    
+    users.forEach(item => {
+        if(item.email == signInEmail.value && item.pass == signInPassword.value) {
+            alert('done')
+        } else {
+            alert('retry')
+        }
+    });
+    form1.reset()
+
+}
+signInSubmit.addEventListener('click', (e)=> {
+    e.preventDefault()
+    signinUser()
+})
 
 
 
