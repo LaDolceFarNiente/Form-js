@@ -20,11 +20,19 @@
                         </div>
                         <span>or use your account</span>
                     </div>
-                    <form  onsubmit="signinUser()" class="enter row">
-                        <input class="signin_email" type="email" placeholder="Email">
-                        <input class="signin_password" type="password" placeholder="Password">
-                        <span class="pass_option">Forgot your password?</span>
-                        <button class="signIn_submit">sign in</button>
+                    <form   class="enter row sign_in">
+                        <div class="email input_group">
+                            <input class="signin_email" type="email" placeholder="Email" onkeyup="validateForm()">
+                            <span class="error"></span>
+                            <!-- <i class="fa-solid fa-circle-exclamation"></i> -->
+                            <!-- <i class="fa-solid fa-circle-check"></i> -->
+                        </div>
+                        <div class="password input_group">
+                            <input class="signin_password" type="password" placeholder="Password">
+                            <span class="error"></span>
+                        </div>
+                        <div class="pass_option">Forgot your password?</div>
+                        <button type="submit" class="signIn_submit">sign in</button>
                     </form>
                 </div>
                 <div class="form_area2 hidden">
@@ -37,16 +45,24 @@
                         </div>
                         <span>or use your email for registration</span>
                     </div>
-                    <form onsubmit="signUpUser()" class="enter row">
-                        <input class="signup_name" type="text" placeholder="Name">
-                        <input class="signup_email" type="email" placeholder="Email">
-                        <input class="signup_password" type="password" placeholder="Password">
-                        <button class="signUp_submit">sign up</button>
+                    <form onsubmit="signUpUser()" class="enter row sign_up">
+                        <div class="name input_group">
+                            <input class="signup_name" type="text" placeholder="Name">
+                            <div class="error"></div>
+                        </div>
+                        <div class="email input_group">
+                            <input class="signup_email" type="email" placeholder="Email">
+                            <div class="error"></div>
+                        </div>
+                        <div class="password input_group">
+                            <input class="signup_password" type="password" placeholder="Password">
+                            <div class="error"></div>
+                        </div>
+                        <button type="submit" class="signUp_submit">sign up</button>
                     </form>
                 </div>
             </div>
         <div class="create_acc">
-            
             <div class="introduction2 row intro_style">
                 <div class="text_title">welcome back!</div>
                 <p class="desc">To keep connected with us please login with your personal info</p>
